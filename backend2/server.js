@@ -828,7 +828,9 @@ createAllTables();
 
 app.use('/api/auth', userRoutes);
 app.use('/patients', patientRoutes);
-
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+  });
 const activeUsers = new Set();
 
 // app.post('/api/auth/logout', (req, res) => {
