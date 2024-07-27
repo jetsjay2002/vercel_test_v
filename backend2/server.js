@@ -792,6 +792,7 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
+
 // Create tables
 const createAllTables = async () => {
     try {
@@ -824,6 +825,9 @@ createAllTables();
 //         res.status(500).json({ error: 'Server error' });
 //     }
 // });
+
+app.use('/api/auth', userRoutes);
+app.use('/patients', patientRoutes);
 
 const activeUsers = new Set();
 
